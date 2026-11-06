@@ -13,3 +13,4 @@ gerbers/
 # Local tool settings
 .claude/settings.local.json
 .DS_Store
+.history/

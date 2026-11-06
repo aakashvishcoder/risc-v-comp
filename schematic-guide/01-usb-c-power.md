@@ -15,7 +15,7 @@
 +-----------------------------------------------------+--------------------------+
 ```
 
-- Sections connect only through **power symbols** (+5V, +3V3, GND) and **net labels** (`USB_DP`, `USB_DM`, ...). No wires cross between boxes.
+- Sections connect only through **power symbols** (+5V, +3V3, GND) and **net labels** (`USB_DP`, `USB_DN`, ...). No wires cross between boxes.
 - **Add an `LCSC` field to every part** (Symbol Properties → + → name `LCSC`, value e.g. `C165948`). JLC reads this field to generate the assembly BOM later. Set test points to **Exclude from BOM**.
 
 ## Parts in this section
@@ -48,10 +48,19 @@ J1 VBUS ────┬────────[F1 500mA]───────�
                                                                   GND    GND             │
                                                                                         GND
 J1 CC1 ── R1 5.1k ── GND          J1 D+ (A6 & B6 tied) ── U1 I/O1 ── label USB_DP
-J1 CC2 ── R2 5.1k ── GND          J1 D- (A7 & B7 tied) ── U1 I/O2 ── label USB_DM
+J1 CC2 ── R2 5.1k ── GND          J1 D- (A7 & B7 tied) ── U1 I/O2 ── label USB_DN
 J1 SBU1, SBU2 ── no-connect (X)   U1 pin 2 GND ── GND
 J1 GND, SHIELD ── GND             TP4, TP5 ── GND
 ```
+
+## Global labels leaving this section
+
+| Label | Shape | Placed at | Points | Goes to |
+|---|---|---|---|---|
+| `USB_DP` | Bidirectional | Right edge of box 1 | → right | Section 2, CH334F upstream D+ (DPU) |
+| `USB_DN` | Bidirectional | Right edge of box 1 | → right | Section 2, CH334F upstream D- (DMU) |
+
+Power nets (VBUS, +5V, +3V3, GND) use **power symbols**, not global labels: arrow/bar up for supplies, GND symbol down.
 
 ## Connections, pin by pin
 
@@ -60,14 +69,14 @@ J1 GND, SHIELD ── GND             TP4, TP5 ── GND
 - `CC1` → R1 → GND
 - `CC2` → R2 → GND. *Each CC line needs its own resistor. One shared resistor breaks C-to-C cables.*
 - `D+`: the symbol has **two D+ pins (A6, B6)**. Wire **both** together → net label `USB_DP`
-- `D-`: **two D- pins (A7, B7)**, wire both → `USB_DM`. *Missing one of these is the #1 USB-C mistake: the board then works with the plug in only one orientation.*
+- `D-`: **two D- pins (A7, B7)**, wire both → `USB_DN`. *Missing one of these is the #1 USB-C mistake: the board then works with the plug in only one orientation.*
 - `SBU1`, `SBU2` → **No-connect flag** (press `Q`)
 - `GND` → GND
 - `SHIELD` → GND
 
 **U1 (USBLC6-2SC6 ESD)**
 - Pin 1 & pin 6 (`I/O1`) → `USB_DP`
-- Pin 3 & pin 4 (`I/O2`) → `USB_DM`
+- Pin 3 & pin 4 (`I/O2`) → `USB_DN`
 - Pin 5 (`VBUS`) → **VBUS**
 - Pin 2 (`GND`) → GND
 - On the PCB, place this right next to J1. Data lines flow *through* its pads.
