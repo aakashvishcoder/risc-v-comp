@@ -29,20 +29,23 @@ Section,Ref (planned),Qty/board,Value / Description,Manufacturer Part,LCSC #,JLC
 4 MCU Core,"R5,R6",2,10k 1% 0402 (BOOT0 / BOOT1 pull-downs),0402WGF1002TCE,C25744,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.003,JLC,BOOT0=0 BOOT1=0 -> run from flash. Hold BOOT button at reset -> bootloader
 5 Memory,U6,1,8MB (64Mbit) QSPI PSRAM,APS6404L-3SQR-SN (AP Memory),C5333729,Extended,SOP-8,Memory_RAM:APS6404L-3SQRx-SN,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,3.99,JLC,Only in-stock PSRAM (ESP-PSRAM64H / LY68L6400 out of stock)
 5 Memory,C20,1,100nF 16V X7R 0402 (PSRAM VDD),CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,
-5 Memory,J2,1,microSD socket push-pull,104031-0811 (Molex),C585350,Extended,SMD,Connector:Micro_SD_Card,Connector_Card:microSD_HC_Molex_104031-0811,0.68,JLC,Swapped from TF-01A: this one has a stock KiCad footprint
+5 Memory,J2,1,microSD socket push-pull,104031-0811 (Molex),C585350,Extended,SMD,Connector:Micro_SD_Card_Det2,Connector_Card:microSD_HC_Molex_104031-0811,0.68,JLC,"Pin 9 DET_B -> SD_DET, pin 10 DET_A -> GND (MCU internal pull-up)"
 5 Memory,C21,1,10uF 10V X5R 0603 (SD card bulk),CL10A106KP8NNNC,C19702,Basic,0603,Device:C,Capacitor_SMD:C_0603_1608Metric,0.02,JLC,SD cards pull current spikes on write
-5 Memory,R7-R12,6,10k 1% 0402 (PSRAM CE# + SD CMD/D0-D3 pull-ups),0402WGF1002TCE,C25744,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.003,JLC,
+5 Memory,R7,1,10k 1% 0402 (PSRAM CE# pull-up),0402WGF1002TCE,C25744,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.003,JLC,Holds CE# high during power-up (datasheet sec 7)
+5 Memory,"R8,R9",2,10k 1% 0402 (PSRAM SIO2/SIO3 pull-downs),0402WGF1002TCE,C25744,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.003,JLC,Unused in SPI mode; datasheet wants them low at power-up
+5 Memory,C22,1,100nF 16V X7R 0402 (SD VDD),CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,
+5 Memory,R10-R14,5,10k 1% 0402 (SD CMD/DAT0-3 pull-ups),0402WGF1002TCE,C25744,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.003,JLC,No pull-up on CLK
 6 User I/O,"D3,D4",2,Red LED 0603 (user LEDs),KT-0603R,C2286,Basic,0603,Device:LED,LED_SMD:LED_0603_1608Metric,0.008,JLC,Red = only in-stock basic LED (green C72043 out of stock)
-6 User I/O,"R13,R14",2,1k 1% 0402 (LED resistors),0402WGF1001TCE,C11702,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.001,JLC,
+6 User I/O,"R15,R16",2,1k 1% 0402 (LED resistors),0402WGF1001TCE,C11702,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.001,JLC,
 6 User I/O,SW1-SW3,3,Tactile switch 5.1x5.1mm SMD (RESET / BOOT / USER),TS-1187A-B-A-B (XKB),C318884,Basic,SMD 5.1x5.1,Switch:SW_Push,Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A,0.02,JLC,
 6 User I/O,J3,1,1x4 2.54mm header (WCH-LinkE debug: 3V3/SWDIO/SWCLK/GND),2.54-1*40P (break off),C2337,-,THT,Connector_Generic:Conn_01x04,Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical,0.16,You,One 1x40 strip covers J3-J5
 6 User I/O,"J4,J5",2,1x10 2.54mm GPIO headers,2.54-1*40P (break off),C2337,-,THT,Connector_Generic:Conn_01x10,Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical,(same strip),You,Pin assignment decided in section 6
 ,,,,,,,,,,,,
 COST ESTIMATE (check live at checkout),,,,,,,,,,,,
-"Parts per board (JLC-assembled)",,,,,,,,,,~11,,
-"Parts for 2 assembled boards (JLC minimum)",,,,,,,,,,~22,,
-"Extended-part fees (8 extended parts x $3)",,,,,,,,,,24,,"J1, U1, F1, U3, U4, U5, U6, J2"
-"PCBA setup + stencil",,,,,,,,,,~10,,
+Parts per board (JLC-assembled),,,,,,,,,,~11,,
+Parts for 2 assembled boards (JLC minimum),,,,,,,,,,~22,,
+Extended-part fees (8 extended parts x $3),,,,,,,,,,24,,"J1, U1, F1, U3, U4, U5, U6, J2"
+PCBA setup + stencil,,,,,,,,,,~10,,
 "4-layer PCB, 5 pcs, <= 50x50mm",,,,,,,,,,~8,,
-"Shipping (JLC economy)",,,,,,,,,,~15-25,,
-TOTAL,,,,,,,,,,~80-90,,"Under $100. Headers from LCSC or any you already have. WCH-LinkE debugger (~$8) is optional and not included"
+Shipping (JLC economy),,,,,,,,,,~15-25,,
+TOTAL,,,,,,,,,,~80-90,,Under $100. Headers from LCSC or any you already have. WCH-LinkE debugger (~$8) is optional and not included
