@@ -1,0 +1,43 @@
+Section,Ref (planned),Qty/board,Value / Description,Manufacturer Part,LCSC #,JLC Type,Package,KiCad Symbol,KiCad Footprint,Unit Price (USD),Assembled By,Notes
+1 USB-C & Power,J1,1,USB-C receptacle USB2.0 16-pin,TYPE-C-31-M-12 (HRO),C165948,Extended,SMD,Connector:USB_C_Receptacle_USB2.0_16P,Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12,0.19,JLC,322k in stock
+1 USB-C & Power,"R1,R2",2,5.1k 1% 0402 (CC pull-downs),0402WGF5101TCE,C25905,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.002,JLC,Tells the host we are a USB device (sink)
+1 USB-C & Power,U1,1,USB ESD protection,USBLC6-2SC6 (ST),C7519,Extended,SOT-23-6,Power_Protection:USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,0.16,JLC,Clones C2687116 are $0.05 if you want cheaper
+1 USB-C & Power,F1,1,PTC resettable fuse 500mA hold / 1A trip,SMD0805P050TF,C20978,Extended,0805,Device:Polyfuse,Fuse:Fuse_0805_2012Metric,0.07,JLC,Protects your laptop USB port if something shorts
+1 USB-C & Power,U2,1,3.3V 1A LDO regulator,AMS1117-3.3,C6186,Basic,SOT-223,Regulator_Linear:AMS1117-3.3,Package_TO_SOT_SMD:SOT-223-3_TabPin2,0.21,JLC,Basic part (no $3 fee). Smaller alt: AP2112K-3.3TRG1 C51118 (SOT-23-5 extended)
+1 USB-C & Power,C1,1,10uF 10V X5R 0603 (LDO input),CL10A106KP8NNNC,C19702,Basic,0603,Device:C,Capacitor_SMD:C_0603_1608Metric,0.02,JLC,
+1 USB-C & Power,C2,1,22uF 25V X5R 0805 (LDO output),CL21A226MAQNNNE,C45783,Basic,0805,Device:C,Capacitor_SMD:C_0805_2012Metric,0.18,JLC,AMS1117 needs >=22uF on output for stability
+1 USB-C & Power,C3,1,100nF 16V X7R 0402,CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,
+1 USB-C & Power,D1,1,Red LED 0603 (power indicator),KT-0603R,C2286,Basic,0603,Device:LED,LED_SMD:LED_0603_1608Metric,0.008,JLC,
+1 USB-C & Power,R3,1,1k 1% 0402 (LED resistor),0402WGF1001TCE,C11702,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.001,JLC,~1.3mA LED current
+1 USB-C & Power,TP1-TP5,5,Test points (VBUS / +5V / +3V3 / GND x2),-,-,-,Bare pad,Connector:TestPoint,TestPoint:TestPoint_Pad_D1.5mm,0,-,Copper pads only; nothing to buy
+2 USB Hub,U3,1,USB 2.0 HS 4-port hub (2 ports used),CH334F (WCH),C5187527,Extended,QFN-24 4x4,Interface_USB:CH334F,Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm,0.63,JLC,Swapped from CH334P: CH334F has a stock KiCad symbol. Runs from 5V via internal LDO
+2 USB Hub,Y1,1,12MHz crystal 20pF 3225,X322512MSB4SI (YXC),C9002,Basic,SMD3225-4P,Device:Crystal_GND24,Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm,0.10,JLC,CH334 has built-in ~16pF load caps. Datasheet says no external caps
+2 USB Hub,"C4,C5",2,1uF 25V X5R 0402 (V5 / VDD33),CL05A105KA5NQNC,C52923,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.006,JLC,
+2 USB Hub,C6,1,100nF 16V X7R 0402 (VDD33),CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,
+3 USB-UART,U4,1,USB to UART bridge (console + serial bootloader),CH343P (WCH),C2846043,Extended,QFN-16 3x3,Interface_USB:CH343P,Package_DFN_QFN:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm,0.98,JLC,No crystal needed (internal clock). Connects to USART1 = MCU bootloader port
+3 USB-UART,"C7,C8,C9",3,100nF 16V X7R 0402 (VDD5 / V3 / VIO),CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,
+4 MCU Core,U5,1,RISC-V MCU 144MHz RV32IMAFC 64KB+ SRAM 256KB flash,CH32V307RCT6 (WCH),C2988083,Extended,LQFP-64 10x10,MCU_WCH_RiscV:CH32V30xRxTx,Package_QFP:LQFP-64_10x10mm_P0.5mm,3.46,JLC,1877 in stock. Bootloader on USB + USART1
+4 MCU Core,Y2,1,8MHz crystal 20pF (HSE),X50328MSB2GI (YXC),C115962,Basic,SMD5032-2P,Device:Crystal,Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm,0.25,JLC,Basic (no fee). Smaller 3225 alt: C5181477 (extended)
+4 MCU Core,"C10,C11",2,20pF C0G 0402 (crystal load),0402CG200J500NT,C1554,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.002,JLC,Tune later if HSE is off-frequency
+4 MCU Core,C12-C19,8,100nF 16V X7R 0402 (VDD/VIO/VDDA/VBAT/NRST decoupling),CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,Exact count confirmed in section 4
+4 MCU Core,"C20,C21",2,10uF 10V X5R 0603 (bulk / VDDA),CL10A106KP8NNNC,C19702,Basic,0603,Device:C,Capacitor_SMD:C_0603_1608Metric,0.02,JLC,
+4 MCU Core,"R4,R5",2,10k 1% 0402 (BOOT0 / BOOT1 pull-downs),0402WGF1002TCE,C25744,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.003,JLC,
+5 Memory,U6,1,8MB (64Mbit) QSPI PSRAM,APS6404L-3SQR-SN (AP Memory),C5333729,Extended,SOP-8,Memory_RAM:APS6404L-3SQRx-SN,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,3.99,JLC,Only in-stock PSRAM (ESP-PSRAM64H / LY68L6400 out of stock)
+5 Memory,C22,1,100nF 16V X7R 0402 (PSRAM VDD),CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,
+5 Memory,J2,1,microSD socket push-pull,104031-0811 (Molex),C585350,Extended,SMD,Connector:Micro_SD_Card,Connector_Card:microSD_HC_Molex_104031-0811,0.68,JLC,Swapped from TF-01A: this one has a stock KiCad footprint
+5 Memory,C23,1,10uF 10V X5R 0603 (SD card bulk),CL10A106KP8NNNC,C19702,Basic,0603,Device:C,Capacitor_SMD:C_0603_1608Metric,0.02,JLC,SD cards pull current spikes on write
+5 Memory,R6-R11,6,10k 1% 0402 (PSRAM CE# + SD CMD/D0-D3 pull-ups),0402WGF1002TCE,C25744,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.003,JLC,
+6 User I/O,"D2,D3",2,Red LED 0603 (user LEDs),KT-0603R,C2286,Basic,0603,Device:LED,LED_SMD:LED_0603_1608Metric,0.008,JLC,Red = only in-stock basic LED (green C72043 out of stock)
+6 User I/O,"R12,R13",2,1k 1% 0402 (LED resistors),0402WGF1001TCE,C11702,Basic,0402,Device:R,Resistor_SMD:R_0402_1005Metric,0.001,JLC,
+6 User I/O,SW1-SW3,3,Tactile switch 5.1x5.1mm SMD (RESET / BOOT / USER),TS-1187A-B-A-B (XKB),C318884,Basic,SMD 5.1x5.1,Switch:SW_Push,Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A,0.02,JLC,
+6 User I/O,J3,1,1x4 2.54mm header (WCH-LinkE debug: 3V3/SWDIO/SWCLK/GND),2.54-1*40P (break off),C2337,-,THT,Connector_Generic:Conn_01x04,Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical,0.16,You,One 1x40 strip covers J3-J5
+6 User I/O,"J4,J5",2,1x10 2.54mm GPIO headers,2.54-1*40P (break off),C2337,-,THT,Connector_Generic:Conn_01x10,Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical,(same strip),You,Pin assignment decided in section 6
+,,,,,,,,,,,,
+COST ESTIMATE (check live at checkout),,,,,,,,,,,,
+"Parts per board (JLC-assembled)",,,,,,,,,,~11,,
+"Parts for 2 assembled boards (JLC minimum)",,,,,,,,,,~22,,
+"Extended-part fees (8 extended parts x $3)",,,,,,,,,,24,,"J1, U1, F1, U3, U4, U5, U6, J2"
+"PCBA setup + stencil",,,,,,,,,,~10,,
+"4-layer PCB, 5 pcs, <= 50x50mm",,,,,,,,,,~8,,
+"Shipping (JLC economy)",,,,,,,,,,~15-25,,
+TOTAL,,,,,,,,,,~80-90,,"Under $100. Headers from LCSC or any you already have. WCH-LinkE debugger (~$8) is optional and not included"
