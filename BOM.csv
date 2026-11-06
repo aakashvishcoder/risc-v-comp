@@ -12,8 +12,10 @@ Section,Ref (planned),Qty/board,Value / Description,Manufacturer Part,LCSC #,JLC
 1 USB-C & Power,TP1-TP5,5,Test points (VBUS / +5V / +3V3 / GND x2),-,-,-,Bare pad,Connector:TestPoint,TestPoint:TestPoint_Pad_D1.5mm,0,-,Copper pads only; nothing to buy
 2 USB Hub,U3,1,USB 2.0 HS 4-port hub (2 ports used),CH334F (WCH),C5187527,Extended,QFN-24 4x4,Interface_USB:CH334F,Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm,0.63,JLC,Swapped from CH334P: CH334F has a stock KiCad symbol. Runs from 5V via internal LDO
 2 USB Hub,Y1,1,12MHz crystal 20pF 3225,X322512MSB4SI (YXC),C9002,Basic,SMD3225-4P,Device:Crystal_GND24,Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm,0.10,JLC,CH334 has built-in ~16pF load caps. Datasheet says no external caps
-2 USB Hub,"C4,C5",2,1uF 25V X5R 0402 (V5 / VDD33),CL05A105KA5NQNC,C52923,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.006,JLC,
+2 USB Hub,C4,1,1uF 25V X5R 0402 (V5 input),CL05A105KA5NQNC,C52923,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.006,JLC,
+2 USB Hub,C5,1,10uF 10V X5R 0603 (VDD33 LDO output),CL10A106KP8NNNC,C19702,Basic,0603,Device:C,Capacitor_SMD:C_0603_1608Metric,0.02,JLC,Datasheet: 0.1uF+10uF on VDD33; bigger cap prevents hub resets on plug-in
 2 USB Hub,C6,1,100nF 16V X7R 0402 (VDD33),CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,
+2 USB Hub,TP6,1,Test point (hub internal 3.3V),-,-,-,Bare pad,Connector:TestPoint,TestPoint:TestPoint_Pad_D1.5mm,0,-,Exclude from BOM
 3 USB-UART,U4,1,USB to UART bridge (console + serial bootloader),CH343P (WCH),C2846043,Extended,QFN-16 3x3,Interface_USB:CH343P,Package_DFN_QFN:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm,0.98,JLC,No crystal needed (internal clock). Connects to USART1 = MCU bootloader port
 3 USB-UART,"C7,C8,C9",3,100nF 16V X7R 0402 (VDD5 / V3 / VIO),CL05B104KO5NNNC,C1525,Basic,0402,Device:C,Capacitor_SMD:C_0402_1005Metric,0.003,JLC,
 4 MCU Core,U5,1,RISC-V MCU 144MHz RV32IMAFC 64KB+ SRAM 256KB flash,CH32V307RCT6 (WCH),C2988083,Extended,LQFP-64 10x10,MCU_WCH_RiscV:CH32V30xRxTx,Package_QFP:LQFP-64_10x10mm_P0.5mm,3.46,JLC,1877 in stock. Bootloader on USB + USART1

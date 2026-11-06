@@ -402,6 +402,18 @@
           "group_by": false,
           "label": "LCSC",
           "name": "LCSC",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "KLC_S3.3",
+          "name": "KLC_S3.3",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "KLC_S4.1",
+          "name": "KLC_S4.1",
           "show": false
         }
       ],
@@ -453,7 +465,7 @@
         "uuid": "e73ca9e3-5197-45b5-b7b5-e1acae1cf986"
       }
     ],
-    "used_designators": "#FLG1-3,C1-3,D1,#PWR1-20,U1-2,TP1-5,F1,R1-3",
+    "used_designators": "#FLG1-3,C1-6,D1,#PWR1-26,Y1,U1-3,TP1-6,F1,R1-3",
     "variants": []
   },
   "sheets": [
