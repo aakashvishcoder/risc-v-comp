@@ -10095,30 +10095,6 @@
 			)
 		)
 	)
-	(global_label "USB_MCU_DN"
-		(shape bidirectional)
-		(at 207.01 64.77 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0ffe16c5-7db5-4ea5-8aa7-9ef3b2181faa")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 223.5041 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "CH343_V3"
 		(shape bidirectional)
 		(at 377.19 60.96 180)
@@ -10324,6 +10300,54 @@
 		(uuid "26820bf6-fe12-4b24-9321-ddbe0a6b7b2f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 102.7331 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "USB_MCU_DP"
+		(shape bidirectional)
+		(at 207.01 67.31 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "28d09cad-895b-4003-ae30-9b15ccb3e37d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 224.0484 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "USB_MCU_DN"
+		(shape bidirectional)
+		(at 207.01 64.77 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2e86f4b4-3b86-4add-83bf-07ec5e9c50d9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 224.1089 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10836,54 +10860,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "USB_UART_DN"
-		(shape bidirectional)
-		(at 207.01 57.15 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6e1f38f1-167e-4ee7-909b-2c49e468624d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 224.1089 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "USB_MCU_DP"
-		(shape bidirectional)
-		(at 207.01 67.31 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "71e93892-9747-4baa-8efc-7b363ba03487")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 223.4436 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -11415,6 +11391,30 @@
 			)
 		)
 	)
+	(global_label "USB_UART_DP"
+		(shape bidirectional)
+		(at 207.01 59.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b60be83e-dacf-437b-bbe7-5cfb850600dd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 223.4436 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "USB_DP"
 		(shape bidirectional)
 		(at 82.55 72.39 180)
@@ -11607,30 +11607,6 @@
 			)
 		)
 	)
-	(global_label "USB_UART_DP"
-		(shape bidirectional)
-		(at 207.01 59.69 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "bf6dedc6-b993-4d6f-a506-293c5b4135d1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 224.0484 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "NRST"
 		(shape output)
 		(at 29.21 153.67 180)
@@ -11748,6 +11724,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "USB_UART_DN"
+		(shape bidirectional)
+		(at 207.01 57.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c993f34f-a90a-4a0f-bd19-8294c1ff547d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 223.5041 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)

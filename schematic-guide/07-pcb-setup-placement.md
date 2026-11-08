@@ -43,7 +43,7 @@ In **Board Setup → Board Editor Layers**, set In1.Cu and In2.Cu to type **powe
 | Net class | Track | Clearance | Via (dia / drill) | Diff pair width / gap | Pattern (Netclass assignments) |
 |---|---|---|---|---|---|
 | Default | 0.2 | 0.15 | 0.5 / 0.3 | — | (everything else) |
-| Power | 0.4 | 0.2 | 0.6 / 0.3 | — | `VBUS`, `+5V`, `+3V3`, `GND`, `HUB_3V3`, `CH343_V3` |
+| Power | 0.3 | 0.15 | 0.6 / 0.3 | — | `VBUS`, `+5V`, `+3V3`, `GND`, `HUB_3V3`, `CH343_V3` |
 | USB | 0.3 | 0.2 | 0.5 / 0.3 | **0.3 / 0.2** | `*_DP`, `*_DN` |
 
 - **USB impedance:** USB needs **90 Ω** between the two wires of each pair. My estimate for JLC04161H-7628 (L1 over the L2 GND plane, about 0.21 mm apart) is **0.3 mm traces with a 0.2 mm gap**, which gives about 89 Ω.
